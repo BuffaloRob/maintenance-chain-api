@@ -18,6 +18,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      # location may be : api_v1_users_url(@user)
       render json: @user, status: :created, location: api_v1_user_url(@user)
     else
       render json: @user.errors, status: :unprocessable_entity
