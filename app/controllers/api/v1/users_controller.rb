@@ -49,3 +49,4 @@ class Api::V1::UsersController < ApplicationController
       params.require(:user).permit(:login, :name)
     end
 end
+# Go to https://codeburst.io/how-to-build-a-good-api-using-rubyonrails-ef7eadfa3078 for namespacing/versioning help
