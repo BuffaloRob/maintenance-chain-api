@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :users
-      resources :items
       resources :categories
       resources :logs
+      resources :users
+      resources :items do 
+        resources :logs, only: [:index, :show, :new, :edit, :create]
+        resources :categories, only: [:index, :show, :new, :edit, :create]
+      end
+
+      root "items#index"
     end
   end  
 end      
