@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :categories
       resources :logs
-      resources :users
       resources :items do 
         resources :logs, only: [:index, :show, :new, :edit, :create]
         resources :categories, only: [:index, :show, :new, :edit, :create]
